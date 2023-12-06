@@ -9,10 +9,10 @@ import 'grid_column_title.dart';
 import 'table_data_source.dart';
 
 class MainGridTable<T> extends StatefulWidget {
-  final List<ColumnData> columnsData;
+  final List<ColumnData<T>> columnsData;
   final List<T> listModel;
   final bool showCheckBox;
-  final Map<int, Widget Function(T)> customCellWidget;
+  final Map<int, Widget Function(dynamic)> customCellWidget;
   const MainGridTable({
     Key? key,
     required this.columnsData,

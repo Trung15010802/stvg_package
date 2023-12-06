@@ -1,6 +1,6 @@
 class ColumnData<T> {
   final String name;
-  final T data;
+  final dynamic Function(T) getData;
 
-  ColumnData({required this.name, required this.data});
+  ColumnData({required this.name, required this.getData});
 }

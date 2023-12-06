@@ -22,29 +22,29 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: MainGridTable<Employee>(
         columnsData: [
-          ColumnData(name: 'ID', data: int),
-          ColumnData(name: 'NAME', data: String),
-          ColumnData(name: 'ROLE', data: String),
-          ColumnData(name: 'SALARY', data: int),
+          ColumnData<Employee>(name: 'ID', getData: (e) => e.id),
+          ColumnData<Employee>(name: 'NAME', getData: (e) => e.name),
+          ColumnData<Employee>(name: 'ROLE', getData: (e) => e.designation),
+          ColumnData<Employee>(name: 'SALARY', getData: (e) => e.salary),
         ],
         listModel: kEmployee,
         customCellWidget: {
           0: (e) => Container(
                 padding: const EdgeInsets.all(8),
-                child: Text(e.id.toString()),
+                child: Text(e.toString()),
               ),
           1: (e) => Container(
                 padding: const EdgeInsets.all(8),
-                child: Text(e.name),
+                child: Text(e),
               ),
           2: (e) => Container(
                 padding: const EdgeInsets.all(8),
-                child: Text(e.designation),
+                child: Text(e),
               ),
           3: (e) => Container(
                 padding: const EdgeInsets.all(8),
                 child: Text(
-                  e.salary.toString(),
+                  e.toString(),
                 ),
               ),
         },

@@ -4,8 +4,8 @@ import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class TableDataSource<T> extends DataGridSource {
   final List<T> list;
-  final List<ColumnData> columnsData;
-  final Map<int, Widget Function(T t)> customCellWidget;
+  final List<ColumnData<T>> columnsData;
+  final Map<int, Widget Function(dynamic t)> customCellWidget;
   late List<DataGridRow> dataGridRows;
 
   TableDataSource({
@@ -59,7 +59,7 @@ class TableDataSource<T> extends DataGridSource {
             (colData) {
               return DataGridCell<dynamic>(
                 columnName: colData.name,
-                value: dataGridRow,
+                value: colData.getData(dataGridRow),
               );
             },
           ).toList(),

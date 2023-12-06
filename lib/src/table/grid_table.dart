@@ -59,6 +59,7 @@ class _TableState extends State<GridTable> {
         SfDataPager(
           pageCount: pageCount,
           delegate: widget.dataGridSource,
+          availableRowsPerPage: const [15, 30, 50],
         )
       ],
     );
